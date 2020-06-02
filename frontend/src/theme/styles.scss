@@ -1,0 +1,10 @@
+$regular-font: "Proxima Nova";
+
+@font-face {
+  font-family: $regular-font;
+  src: url(../assets/font/ProximaNova-Regular.otf);
+}
+
+body {
+  font-family: $regular-font;
+}
