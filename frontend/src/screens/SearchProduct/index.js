@@ -1,7 +1,9 @@
 import React from "react";
 
+import SearchBox from "../../components/SearchBox";
+
 const SearchProduct = () => (
-  <h1>Search Project</h1>
+  <SearchBox />
 );
 
 export default SearchProduct;

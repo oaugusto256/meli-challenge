@@ -1,9 +1,9 @@
 import React from "react";
 
-import "./theme/styles.scss";
+import SearchProduct from "./screens/SearchProduct";
 
 const App = () => (
-  <h1>Meli Challenge</h1>
+  <SearchProduct />
 );
 
 export default App;
