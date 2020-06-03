@@ -3,7 +3,9 @@ import React from "react";
 import SearchBox from "../../components/SearchBox";
 
 const SearchProduct = () => (
-  <SearchBox />
+  <>
+    <SearchBox />
+  </>
 );
 
 export default SearchProduct;

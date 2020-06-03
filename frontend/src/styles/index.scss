@@ -1,5 +1,10 @@
 @tailwind base;
 
+@font-face {
+  font-family: Proxima Nova;
+  src: url(../assets/fonts/ProximaNova-Regular.otf) format("otf");
+}
+
 @tailwind components;
 
 @tailwind utilities;

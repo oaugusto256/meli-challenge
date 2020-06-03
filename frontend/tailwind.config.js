@@ -1,5 +1,8 @@
 module.exports = {
   theme: {
+    fontFamily: {
+      body: ["Proxima Nova"],
+    },
     colors: {
       yellow: "#ffe600",
       blue: "#3483fa",
