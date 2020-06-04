@@ -1,13 +1,15 @@
-import SearchBox from "./SearchBox/SearchBox";
+import SearchHeader from "./SearchHeader/SearchHeader";
 import Container from "./Container/Container";
 import Logo from "./Logo/Logo";
 import SearchButton from "./SearchButton/SearchButton";
 import TextInput from "./TextInput/TextInput";
+import SearchItemForm from "./SearchItemForm/SearchItemForm";
 
 export {
-  SearchBox,
+  SearchHeader,
   Container,
   Logo,
   SearchButton,
   TextInput,
+  SearchItemForm,
 };

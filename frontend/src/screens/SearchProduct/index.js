@@ -1,10 +1,10 @@
 import React from "react";
 
-import { SearchBox } from "../../components";
+import { SearchHeader } from "../../components";
 
 const SearchProduct = () => (
   <>
-    <SearchBox />
+    <SearchHeader />
   </>
 );
 
