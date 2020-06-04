@@ -591,10 +591,8 @@ video {
   height: auto;
 }
 
-$regular-font: Proxima Nova;
-
 @font-face {
-  font-family: $regular-font;
+  font-family: Proxima Nova;
 
   src: url(../assets/fonts/ProximaNova-Regular.otf) format("otf");
 }
