@@ -22,10 +22,6 @@ module.exports = {
     'react',
   ],
   rules: {
-    indent: [
-      "error",
-      2
-    ],
     "linebreak-style": [
       "error",
       "unix"
@@ -38,6 +34,8 @@ module.exports = {
       "error",
       "always"
     ],
-    "react/jsx-filename-extension": "off"
+    "react/jsx-filename-extension": "off",
+    "indent": ["error", 2, { "ignoredNodes": ["JSXElement *"] }],
+    "react/jsx-indent": ["error", 2]
   }
 };
