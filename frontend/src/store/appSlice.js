@@ -1,23 +1,38 @@
+/* eslint-disable no-param-reassign */
 import { createSlice } from "@reduxjs/toolkit";
+
+import itemsService from "../services/item";
 
 export const appSlice = createSlice({
   name: "counter",
   initialState: {
     items: [],
+    loading: false,
+    error: false,
   },
   reducers: {
-    searchItems: (state, action) => {
+    loadingItems: (state) => {
+      state.loading = true;
+    },
+    successFetchItems: (state, action) => {
+      state.loading = false;
+      state.error = false;
       state.items = action.payload;
+    },
+    errorFetchItems: (state) => {
+      state.items = [];
+      state.loading = false;
+      state.error = true;
     },
   },
 });
 
-export const { searchItems } = appSlice.actions;
+const { successFetchItems } = appSlice.actions;
 
-export const incrementAsync = (amount) => async (dispatch) => {
-  dispatch(searchItems(amount));
+export const searchItems = (query) => async (dispatch) => {
+  const result = await itemsService.searchItems(query);
+
+  dispatch(successFetchItems(result.items));
 };
-
-export const selectCount = (state) => state.counter.value;
 
 export default appSlice.reducer;

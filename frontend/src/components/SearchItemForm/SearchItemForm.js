@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 
+import { useDispatch } from "react-redux";
+
 import SearchButton from "../SearchButton/SearchButton";
 import TextInput from "../TextInput/TextInput";
 
+import { searchItems } from "../../store/appSlice";
 
 const SearchItemForm = () => {
+  const dispatch = useDispatch();
+
   const [searchItemText, setSearchItemText] = useState("");
 
   const onChangeSearchItemInput = (event) => setSearchItemText(event.target.value);
@@ -12,7 +17,7 @@ const SearchItemForm = () => {
   const handleSearchItem = (event) => {
     event.preventDefault();
 
-    console.log("handleSearchItem");
+    dispatch(searchItems({ query: searchItemText }));
   };
 
   return (
