@@ -5,6 +5,9 @@ import SearchButton from "./SearchButton/SearchButton";
 import TextInput from "./TextInput/TextInput";
 import SearchItemForm from "./SearchItemForm/SearchItemForm";
 import ListItems from "./ListItems/ListItems";
+import Notification from "./Notification/Notification";
+import Item from "./Item/Item";
+import RoundedBox from "./RoundedBox/RoundedBox";
 
 export {
   SearchHeader,
@@ -14,4 +17,7 @@ export {
   TextInput,
   SearchItemForm,
   ListItems,
+  Notification,
+  Item,
+  RoundedBox,
 };
