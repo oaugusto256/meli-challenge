@@ -10,7 +10,6 @@ import {
 
 import { useQuery } from "../../utils";
 
-
 const ResultSearch = () => {
   const query = useQuery();
   const dispatch = useDispatch();

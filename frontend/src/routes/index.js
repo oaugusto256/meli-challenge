@@ -8,10 +8,14 @@ import {
 
 import SearchProduct from "../screens/SearchProduct";
 import ResultSearch from "../screens/ResultSearch";
+import ProductDetails from "../screens/ProductDetails";
 
 const Routes = () => (
   <Router>
     <Switch>
+      <Route path="/items/:id">
+        <ProductDetails />
+      </Route>
       <Route path="/items">
         <ResultSearch />
       </Route>
