@@ -28,15 +28,27 @@ export const appSlice = createSlice({
       state.error = true;
       state.notification = "Ocurrió un error!";
     },
+    hasNotFoundItems: (state) => {
+      state.loading = false;
+      state.error = false;
+      state.items = [];
+      state.notification = "No se encontró nada.";
+    },
   },
 });
 
-const { loadingItems, successFetchItems, errorFetchItems } = appSlice.actions;
+const {
+  loadingItems, successFetchItems, errorFetchItems, hasNotFoundItems,
+} = appSlice.actions;
 
 export const searchItems = (query) => async (dispatch) => {
   dispatch(loadingItems());
 
   const result = await itemsService.searchItems(query);
+
+  if (result.items.length === 0) {
+    return dispatch(hasNotFoundItems());
+  }
 
   if (result.items) {
     return dispatch(successFetchItems(result.items));
