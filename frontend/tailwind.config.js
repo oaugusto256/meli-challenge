@@ -4,6 +4,7 @@ module.exports = {
       body: ["Proxima Nova"],
     },
     colors: {
+      white: "#ffffff",
       yellow: "#ffe600",
       blue: "#3483fa",
       grey: {
