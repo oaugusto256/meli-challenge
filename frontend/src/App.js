@@ -1,9 +1,9 @@
 import React from "react";
 
-import SearchProduct from "./screens/SearchProduct";
+import Router from "./routes";
 
 const App = () => (
-  <SearchProduct />
+  <Router />
 );
 
 export default App;
