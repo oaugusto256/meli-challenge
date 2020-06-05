@@ -8,9 +8,12 @@ const constructItems = (json) => ({
     id: item.id,
     title: item.title,
     price: {
-      currency: item.currency_id,
-      amount: item.available_quantity,
-      decimals: 0,
+      currency: item.installments.currency_id,
+      amount: item.installments.amount,
+      decimals: item.installments.rate
+    },
+    address: {
+      stateName: item.address.state_name
     },
     picture: item.thumbnail,
     condition: item.condition,
