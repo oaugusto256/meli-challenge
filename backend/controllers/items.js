@@ -6,6 +6,7 @@ const constructItems = require("../utils/constructItems");
 const constructItem = require("../utils/constructItem");
 
 const itemsSchema = require("../models/items");
+const itemSchema = require("../models/item");
 
 itemsRouter.get("/:id", async (req, res) => {
   try {
@@ -27,9 +28,9 @@ itemsRouter.get("/:id", async (req, res) => {
       }
     });
 
-    // if (itemsSchema.validate(itemsJson).error) {
-    //   return res.status(422).json({ error: "item didn't match schema validation" });
-    // }
+    if (itemSchema.validate(itemJson).error) {
+      return res.status(422).json({ error: "item didn't match schema validation" });
+    }
 
     return res.json(itemJson);
   } catch (error) {

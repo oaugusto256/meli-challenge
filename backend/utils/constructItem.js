@@ -1,6 +1,4 @@
 const constructItem = ({ item }) => {
-  console.log(item);
-
   return {
     author: {
       name: "Otavio",
