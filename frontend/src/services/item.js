@@ -8,6 +8,13 @@ const searchItems = ({ query }) => {
   return request.then((response) => response.data);
 };
 
+const getItem = ({ id }) => {
+  const request = axios.get(`${baseUrl}/${id}`);
+
+  return request.then((response) => response.data);
+};
+
 export default {
   searchItems,
+  getItem,
 };
