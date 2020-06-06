@@ -4,18 +4,20 @@ import { createSlice } from "@reduxjs/toolkit";
 import itemsService from "../services/item";
 
 export const appSlice = createSlice({
-  name: "counter",
+  name: "app",
   initialState: {
-    items: [],
-    item: {},
-    loading: false,
+    items: null,
+    item: null,
+    loading: true,
     error: false,
     notification: "¡Obtén lo que necesitas ahora!",
   },
   reducers: {
     loading: (state) => {
       state.loading = true;
-      state.notification = "Buscando productos...";
+      state.items = null;
+      state.item = null;
+      state.notification = "Buscando...";
     },
     successFetchItems: (state, action) => {
       state.loading = false;
@@ -30,8 +32,8 @@ export const appSlice = createSlice({
       state.notification = null;
     },
     serviceError: (state) => {
-      state.items = [];
-      state.item = {};
+      state.item = null;
+      state.items = null;
       state.loading = false;
       state.error = true;
       state.notification = "Ocurrió un error!";
@@ -39,21 +41,28 @@ export const appSlice = createSlice({
     hasNotFound: (state) => {
       state.loading = false;
       state.error = false;
-      state.items = [];
+      state.items = null;
       state.item = null;
       state.notification = "No se encontró nada.";
+    },
+    resetItem: (state) => {
+      state.item = null;
     },
   },
 });
 
 const {
-  loading, successFetchItems, successFetchItem, serviceError, hasNotFound,
+  loading, successFetchItems, successFetchItem, serviceError, hasNotFound, resetItem,
 } = appSlice.actions;
 
 export const searchItems = (query) => async (dispatch) => {
   dispatch(loading());
 
   const result = await itemsService.searchItems(query);
+
+  if (!result.items) {
+    return dispatch(serviceError());
+  }
 
   if (result.items.length === 0) {
     return dispatch(hasNotFound());
@@ -62,8 +71,6 @@ export const searchItems = (query) => async (dispatch) => {
   if (result.items) {
     return dispatch(successFetchItems(result.items));
   }
-
-  dispatch(serviceError());
 };
 
 export const getItem = (id) => async (dispatch) => {
@@ -71,11 +78,19 @@ export const getItem = (id) => async (dispatch) => {
 
   const result = await itemsService.getItem(id);
 
+  if (!result.item) {
+    return dispatch(hasNotFound());
+  }
+
   if (result) {
     return dispatch(successFetchItem(result.item));
   }
 
   dispatch(serviceError());
+};
+
+export const cleanItem = () => (dispatch) => {
+  dispatch(resetItem());
 };
 
 export default appSlice.reducer;
