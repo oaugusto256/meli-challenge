@@ -2,6 +2,7 @@ import React from "react";
 
 const ITEM_CONDITION = {
   new: "Nuevo",
+  used: "Usado",
 };
 
 const ItemDetail = ({ item }) => (
