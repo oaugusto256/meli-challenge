@@ -13,10 +13,10 @@ import { useQuery } from "../../utils";
 const ResultSearch = () => {
   const query = useQuery();
   const dispatch = useDispatch();
-  const { items, loading, notification } = useSelector((state) => state.app);
+  const { items, notification } = useSelector((state) => state.app);
 
   useEffect(() => {
-    const isNotAlreadyFeatchingItems = !loading;
+    const isNotAlreadyFeatchingItems = !items;
 
     if (isNotAlreadyFeatchingItems) {
       dispatch(searchItems({ query: query.get("search") }));
@@ -26,10 +26,10 @@ const ResultSearch = () => {
   return (
     <>
       <SearchHeader />
-      <section className="bg-grey-100 h-full">
+      <section className="bg-grey-100">
         <Container>
           <RoundedBox>
-            {notification && <Notification notification={notification} />}
+            <Notification notification={notification} />
             <ListItems items={items} />
           </RoundedBox>
         </Container>
