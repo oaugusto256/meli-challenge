@@ -8,6 +8,7 @@ import ListItems from "./ListItems/ListItems";
 import Notification from "./Notification/Notification";
 import Item from "./Item/Item";
 import RoundedBox from "./RoundedBox/RoundedBox";
+import ItemDetail from "./ItemDetail/ItemDetail";
 
 export {
   SearchHeader,
@@ -20,4 +21,5 @@ export {
   Notification,
   Item,
   RoundedBox,
+  ItemDetail,
 };

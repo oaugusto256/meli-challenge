@@ -7,7 +7,7 @@ import SearchItemForm from "../SearchItemForm/SearchItemForm";
 const SearchHeader = () => (
   <header className="bg-yellow">
     <Container>
-      <div className="flex items-center px-4 h-16">
+      <div className="flex items-center h-16">
         <Logo />
         <SearchItemForm />
       </div>
