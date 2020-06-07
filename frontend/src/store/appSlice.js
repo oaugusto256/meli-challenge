@@ -58,35 +58,41 @@ const {
 export const searchItems = (query) => async (dispatch) => {
   dispatch(loading());
 
-  const result = await itemsService.searchItems(query);
+  try {
+    const result = await itemsService.searchItems(query);
 
-  if (!result.items) {
+    if (!result.items) {
+      return dispatch(serviceError());
+    }
+
+    if (result.items.length === 0) {
+      return dispatch(hasNotFound());
+    }
+
+    if (result.items) {
+      return dispatch(successFetchItems(result.items));
+    }
+  } catch (error) {
     return dispatch(serviceError());
-  }
-
-  if (result.items.length === 0) {
-    return dispatch(hasNotFound());
-  }
-
-  if (result.items) {
-    return dispatch(successFetchItems(result.items));
   }
 };
 
 export const getItem = (id) => async (dispatch) => {
   dispatch(loading());
 
-  const result = await itemsService.getItem(id);
+  try {
+    const result = await itemsService.getItem(id);
 
-  if (!result.item) {
-    return dispatch(hasNotFound());
+    if (!result.item) {
+      return dispatch(hasNotFound());
+    }
+
+    if (result) {
+      return dispatch(successFetchItem(result.item));
+    }
+  } catch (error) {
+    return dispatch(serviceError());
   }
-
-  if (result) {
-    return dispatch(successFetchItem(result.item));
-  }
-
-  dispatch(serviceError());
 };
 
 export const cleanItem = () => (dispatch) => {
