@@ -7,12 +7,12 @@ import "./styles/tailwind.scss";
 
 import store from "./store";
 
-import App from "./App";
+import Router from "./routes/Routes";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <Router />
     </Provider>
   </React.StrictMode>,
   document.getElementById("root"),

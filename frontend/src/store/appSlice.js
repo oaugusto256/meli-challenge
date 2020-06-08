@@ -55,6 +55,8 @@ const {
   loading, successFetchItems, successFetchItem, serviceError, hasNotFound, resetItem,
 } = appSlice.actions;
 
+export const reducer = appSlice.reducers;
+
 export const searchItems = (query) => async (dispatch) => {
   dispatch(loading());
 
