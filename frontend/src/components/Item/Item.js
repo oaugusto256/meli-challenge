@@ -7,6 +7,7 @@ const Item = ({ item, onClickItem }) => {
 
   return (
     <div
+      id="item"
       data-testid="item"
       onClick={handleClick}
       className="cursor-pointer bg-white border-b border-grey-100 p-4 flex"

@@ -7,7 +7,7 @@ const ITEM_CONDITION = {
 
 const ItemDetail = ({ item }) => (
   item && (
-    <div className="flex flex-wrap p-8">
+    <div id="item-detail" className="flex flex-wrap p-8">
       <div className="sm:w-full md:w-full lg:w-9/12 sm:px-0 md:px-4 lg:px-8">
         <img
           src={item.picture}

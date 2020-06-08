@@ -19,7 +19,7 @@ const ListItems = ({ items }) => {
   };
 
   return (
-    <div data-testid="list-items">
+    <div id="list-items" data-testid="list-items">
       {items && items.map((item) => (
         <Item
           key={item.id}
