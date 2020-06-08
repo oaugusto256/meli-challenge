@@ -50,10 +50,12 @@ To visit app:
 
 ## Reflection
 
-This is a 1 week challenge project to *mercadolibre* from a Front-end position. Project goals included using technologies to show knowledge and fluency on javascript enviroment, as well as be able to put required tech requirements and ideas on a real project.
+This is a 1 week challenge project to *mercadolibre* to get in a frontend position.
 
-I started this project by using the `create-react-app` boilerplate on the frontend, it minimizes initial setup and with that, I could invest more time in diving into features, then adding `tailwind`, `react-router-4.0` and `redux`. The frontend application is tested using `jest` and `cypress`.
+Project goals inclues using technologies to show knowledge and fluency on javascript, as well as be able to put required requirements and ideas on a real project.
 
-The backend was projected using `express` and `joi`.
+I started this project by using the `create-react-app` boilerplate on the frontend, it minimizes initial setup and with that, I could invest more time in diving into features, then adding `tailwind`, `react-router-4.0` and `redux`. The frontend application is tested using `jest` and `cypress`, some unit tests were created and the user happy path as tested on end to end tests.
+
+The backend was projected using `express`, `nodemon`, `node-fetch` and `joi`.
 
 Both frontend and backend have a ESLint configuration.
