@@ -1,6 +1,10 @@
-## meli-challenge
+# meli-challenge
 
 An application used to search items from mercadolibre, built with javascript, react, redux, node, express, tailwind, jest and cypress.
+
+## Live
+
+![](https://media.giphy.com/media/UoXfziiHwpnWS16iAT/giphy.gif)
 
 ## Installation and setup instructions
 
