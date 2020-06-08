@@ -1,41 +1,48 @@
 module.exports = {
-  env: {
-    browser: true,
-    es6: true,
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb',
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
   ],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
-  },
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    ecmaVersion: 11,
-    sourceType: 'module',
+    "ecmaVersion": 2018,
+    "sourceType": "module"
   },
-  plugins: [
-    'react',
+  "plugins": [
+    "react", "jest"
   ],
-  rules: {
+  "rules": {
+    "indent": [
+      "error",
+      2
+    ],
     "linebreak-style": [
       "error",
       "unix"
     ],
-    quotes: [
+    "quotes": [
       "error",
       "double"
     ],
-    semi: [
+    "semi": [
       "error",
-      "always"
     ],
-    "react/jsx-filename-extension": "off",
-    "indent": ["error", 2, { "ignoredNodes": ["JSXElement *"] }],
-    "react/jsx-indent": ["error", 2]
+    "eqeqeq": "error",
+    "no-trailing-spaces": "error",
+    "object-curly-spacing": [
+      "error", "always"
+    ],
+    "arrow-spacing": [
+      "error", { "before": true, "after": true }
+    ],
+    "no-console": 0,
+    "react/prop-types": 0
   }
-};
+}
